@@ -4,6 +4,20 @@ title: "Nodes"
 "twitter:image": "https://raw.githubusercontent.com/worldcoin/developer-docs/main/images/docs/docs-meta.png"
 ---
 
+## Check your RPC endpoint
+
+The [Chain.Love directory](https://world-chain.chain.love/toolbox/apis) lists RPC providers for World Chain. Check the provider's documentation for the network you need.
+
+Set `RPC_URL` to the HTTP or HTTPS endpoint you plan to use, then check its chain ID:
+
+```sh
+curl --fail --silent --show-error "$RPC_URL" \
+  --header 'Content-Type: application/json' \
+  --data '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":1}'
+```
+
+Check the `result` field against the [network information](/world-chain/quick-start/info). World Chain Mainnet returns `0x1e0` (480). World Chain Sepolia returns `0x12c1` (4801).
+
 ## Alchemy
 
 [Alchemy](https://alchemy.com/) is a leading blockchain development platform that provides robust node provisioning services for Web3 applications on World Chain. 
@@ -16,14 +30,6 @@ For access to a World Chain node, check out the [World Chain Alchemy page](https
 
 - World Chain
 - World Chain Sepolia
-
-## Blast API
-
-Blast API offers standardized blockchain API services for Web3 development, allowing users to generate dedicated endpoints (RPC/WSS/REST) for supported blockchain networks. The platform employs geographically distributed third-party nodes to ensure reliability, low latency, and decentralization.
-
-### Supported networks
-
-- World Chain
 
 ## QuickNode
 
